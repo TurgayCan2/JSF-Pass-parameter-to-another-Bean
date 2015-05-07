@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+        >
+<h:head>
+    <title>Index Page</title>
+</h:head>
+<h:body>
+
+    <div align="center">
+        <h:form id="indexForm">
+
+            <h2>Index Page</h2>
+
+            <h:panelGrid columns="3">
+
+                <p:outputLabel for="username" value="User Name:"/>
+                <p:inputText id="username" value="#{indexView.user.username}"
+                             required="true" label="Username"/>
+                <p:message for="username"/>
+
+                <p:outputLabel for="email" value="Email:"/>
+                <p:inputText id="email" value="#{indexView.user.email}"
+                             required="true" label="email"/>
+                <p:message for="email"/>
+
+                <p:commandButton action="#{indexView.passParams}" value="Pass Params to Another Page/Bean"
+                                 update="indexForm"/>
+
+            </h:panelGrid>
+        </h:form>
+    </div>
+</h:body>
+</html>
